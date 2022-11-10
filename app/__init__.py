@@ -1,12 +1,10 @@
 import os
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-import sqlalchemy
 
 
 basedir = os.path.abspath(os.path.dirname(__file__)) 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='static')
 
 app.config.from_mapping(
     SECRET_KEY = 'you-will-never-guess',
@@ -15,5 +13,4 @@ app.config.from_mapping(
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 )
 
-db = SQLAlchemy(app)
 from app import routes
