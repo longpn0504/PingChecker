@@ -63,7 +63,7 @@
                 align-items: center;
             
             }
-            .graph{
+            .graph_display{
                 background-color: white!important;
                 position: absolute;
                 width: 1000px;
@@ -76,6 +76,9 @@
                 transition: 0.3s;
             }
             .form:hover{
+                box-shadow: 0 8px 16px 0 rgba(26, 183, 231, 0.6);
+            }
+            .graph_display:hover{
                 box-shadow: 0 8px 16px 0 rgba(26, 183, 231, 0.6);
             }
 
@@ -100,7 +103,7 @@
                     <p>{{ form.submit() }}</p>
                 </form>
             </div>
-            <div class="graph">
+            <div class="graph_display">
                 <h1>
                     Request Ping
                 </h1>
