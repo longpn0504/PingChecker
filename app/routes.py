@@ -22,15 +22,16 @@ serversDict= {
     7: RU
 }
 def retreivePing(index):
-    server= serversDict[index]
+    server= serversDict[index-1]
     count=0
     responseList=[]
     while(count < 6):
-        ping = os.popen("ping " + server )
+        ping = os.popen("ping " +  server )
         result = ping.readlines()
         msLine = result[-1].strip()
         msLine= msLine[-9: -1]
         msLine= re.sub(r'[^0-9.]', '', msLine)
+        if(re.subr'[^0-9.]', '', msLine
         responseList.append(msLine)
         count = count +1
     newList=[
