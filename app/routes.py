@@ -43,6 +43,7 @@ def retreivePing(index):
          ]
     print (newList)
     return newList
+print(retreivePing(1))
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
@@ -64,4 +65,3 @@ def index():
         values = [row[1] for row in data]   
         print(server)   
     return render_template('base.html', form = form, labels = labels, values = values)
-
