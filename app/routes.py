@@ -5,9 +5,9 @@ from pythonping import ping
 import os
 import re
 
-NA= '104.160.131.3'
+NA= '104.160.131.102'
 LAN= '104.160.136.3'
-EUW= '104.160.141.3'
+EUW= '104.160.141.102'
 EUNE= '104.160.142.3'
 BR= '104.160.152.3'
 OCE= '104.160.156.1'
@@ -22,7 +22,7 @@ serversDict= {
     7: RU
 }
 def retreivePing(index):
-    server= serversDict[index-1]
+    server= serversDict[index]
     count=0
     responseList=[]
     while(count < 6):
@@ -31,7 +31,6 @@ def retreivePing(index):
         msLine = result[-1].strip()
         msLine= msLine[-9: -1]
         msLine= re.sub(r'[^0-9.]', '', msLine)
-        if(re.subr'[^0-9.]', '', msLine
         responseList.append(msLine)
         count = count +1
     newList=[
