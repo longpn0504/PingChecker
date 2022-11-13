@@ -33,21 +33,34 @@ def retreivePing(index):
         msLine= re.sub(r'[^0-9.]', '', msLine)
         responseList.append(msLine)
         count = count +1
-    print(responseList)
-    return responseList
+    newList=[
+         (1,responseList[0]),
+         (2,responseList[1]),
+         (3,responseList[2]),
+         (4,responseList[3]),
+         (5,responseList[4])
+         ]
+    print (newList)
+    return newList
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
+    labels = []
+    values = []
     server = ''
+    i = 0
     form = RequestPing()
     if form.validate_on_submit():
         region = form.rigions.data
         print(region)
         for k in serversDict.keys():
             if k == int(region):
+                i = k
                 server = serversDict[k]
-        print(server)
-
-        
-    return render_template('base.html', form = form)
+                print(i)
+        data = retreivePing(i)
+        labels = [row[0] for row in data]
+        values = [row[1] for row in data]   
+        print(server)   
+    return render_template('base.html', form = form, labels = labels, values = values)
 
