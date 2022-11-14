@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
 
         <script src="{{url_for('static', filename='javScript/graph.js')}}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> 
 
         <title>Ping Checker</title>
         <style>
@@ -84,7 +85,7 @@
 
         </style>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> 
+        
     </head>
     <body>
        <nav class="navbar">
@@ -109,21 +110,25 @@
                     Request Ping
                 </h1>
                 <canvas id="lineChart" width = "900" height = "400">
-                        <canvas id="lineChart" width="100%" height="100%">
                 </canvas>
-
-                </canvas>  
                 <script>
-                    var ctx = document.getElementById("lineChart").getContext('2d')
-                    var lineChart = new chart(ctx,{
+                    var ctx = document.getElementById("lineChart").getContext("2d")
+                    var lineChart = new Chart(ctx,{
                         type:"line",
                         data: {
-                            labels: {{labels | safe}}
-                            datasets: "Data Point",
-                            data: {{values | safe}},
-                            fill: false,
-                            borderColor: "rgb(75,192,192)",
-                            lineTension: 0.1
+                            labels: {{labels | safe}},
+                            datasets:[
+                                {
+                                    label:"Data Point",
+                                    data: {{values | safe}},
+                                    fill: false,
+                                    borderColor: "rgb(75,192,192)",
+                                    lineTension: 0.5
+                                }
+                            ]
+                        },
+                        options:{
+                            responsive: false
                         }
                     });
                </script>

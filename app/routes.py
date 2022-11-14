@@ -63,7 +63,5 @@ def index():
         labels = [row[0] for row in data]
         values = [row[1] for row in data]   
         print(server)   
-        data = [
-           ()
-        ]    return render_template('base.html', form = form, labels = labels, values = values)
+    return render_template('base.html', form = form, labels = labels, values = values)
 
