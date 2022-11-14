@@ -5,13 +5,14 @@ from pythonping import ping
 import os
 import re
 
-NA= '104.160.131.102'
-LAN= '104.160.136.3'
-EUW= '104.160.141.102'
-EUNE= '104.160.142.3'
-BR= '104.160.152.3'
-OCE= '104.160.156.1'
-RU= '162.249.73.2'
+NA= '104.160.131.102' #works
+LAN= 'google.com.mx' #works
+EUW= 'www1.sedoparking.com' #works
+EUNE= 'google.co.uk' 
+BR= 'google.com.br' 
+OCE= 'LoL.garena.com' #works
+RU= 'google.com.ru'
+
 serversDict= {
     1: NA,
     2: LAN,
