@@ -107,9 +107,9 @@
             </div>
             <div class="graph_display">
                 <h1 style="text-align: center; margin-top: 20px; color: black;">
-                    Request Ping
+                    Ping Result
                 </h1>
-                <canvas id="lineChart" width = "900" height = "400">
+                <canvas id="lineChart" width = "900" height = "500">
                         
                 </canvas>  
                 <script>
@@ -134,10 +134,10 @@
                         }
                     });
                </script>
-
-            </div>
-            <div>
+               <div class = "Average">
+                <p style = "color : black; font-size: 30px; text-align: center;" >Max: {{max}} <br/>  Min: {{min}} <br/> Average: {{average}}</p>
                 
+                </div>
             </div>
        </div>
 

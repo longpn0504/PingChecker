@@ -49,18 +49,27 @@ def index():
     labels = []
     values = []
     server = ''
+    max = 0
+    min = 0
+    average= 0
     i = 0
     form = RequestPing()
     if form.validate_on_submit():
         region = form.rigions.data
-        print(region)
         for k in serversDict.keys():
             if k == int(region):
                 i = k
                 server = serversDict[k]
-                print(i)
         data = retreivePing(i)
         labels = [row[0] for row in data]
-        values = [row[1] for row in data]   
-        print(server)   
-    return render_template('base.html', form = form, labels = labels, values = values)
+        values = [row[1] for row in data]
+        list = [eval(i) for i in values]
+        min = list[0]
+        for x in list:
+             if (x < min):
+                milVal = x
+             if (int(x) > max):
+                 max = x
+             average = average + x   
+        average = average/5  
+    return render_template('base.html', form = form, labels = labels, values = values, min = min, max = max, average = average)
