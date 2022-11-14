@@ -47,7 +47,9 @@ def index():
             if k == int(region):
                 server = serversDict[k]
         print(server)
-
+        data = [
+           ()
+        ]
         
     return render_template('base.html', form = form)
 
