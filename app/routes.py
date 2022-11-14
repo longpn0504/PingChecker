@@ -42,7 +42,6 @@ def retreivePing(index):
          ]
     print (newList)
     return newList
-print(retreivePing(1))
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
