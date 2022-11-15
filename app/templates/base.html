@@ -89,7 +89,7 @@
     </head>
     <body>
        <nav class="navbar">
-            <a class="brand" href="/" >Ping Checker</a>
+            <a class="brand" href="/" >Display League of Legends Ping</a>
        </nav>
        <div class="display">
             <div class="form">
@@ -107,23 +107,25 @@
             </div>
             <div class="graph_display">
                 <h1 style="text-align: center; margin-top: 20px; color: black;">
-                    Request Ping
+                    Ping Result
                 </h1>
-                <canvas id="lineChart" width = "900" height = "400">
-                </canvas>
+                <canvas id="lineChart" width = "900" height = "500">
+                        
+                </canvas>  
                 <script>
                     var ctx = document.getElementById("lineChart").getContext("2d")
                     var lineChart = new Chart(ctx,{
                         type:"line",
-                        data: {
+                        data: 
+                        {
                             labels: {{labels | safe}},
                             datasets:[
                                 {
-                                    label:"Data Point",
+                                    label:"Ping Data",
                                     data: {{values | safe}},
                                     fill: false,
-                                    borderColor: "rgb(75,192,192)",
-                                    lineTension: 0.5
+                                    borderColor: "rgb(255,0,0)",
+                                    lineTension: 0.1
                                 }
                             ]
                         },
@@ -132,9 +134,10 @@
                         }
                     });
                </script>
-            </div>
-            <div>
+               <div class = "Average">
+                <p style = "color : black; font-size: 30px; text-align: center;" >Max: {{max}} <br/>  Min: {{min}} <br/> Average: {{average}}</p>
                 
+                </div>
             </div>
        </div>
 
