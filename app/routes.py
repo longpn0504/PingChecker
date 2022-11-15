@@ -8,10 +8,10 @@ import re
 NA= '104.160.131.102' #works
 LAN= 'google.com.mx' #works
 EUW= 'www1.sedoparking.com' #works
-EUNE= 'google.co.uk' 
-BR= 'google.com.br' 
+EUNE= 'eu.ping.com' #works
+BR= 'riotur.rio' #works
 OCE= 'LoL.garena.com' #works
-RU= 'google.com.ru'
+RU= 'yandex.ru'  #works
 
 serversDict= {
     1: NA,
